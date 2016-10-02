@@ -1,0 +1,16 @@
+<!--Display all the stories regarding Toronto
+  will contain the different section such as ladder of stories, categories
+  -->
+
+<div class="container-fluid row-no-padding">
+  <div class="row" ng-controller = "BrowseMenuController">
+  <div class="col-xs-12">
+    <div class="row">
+      <div ui-view = "fieldCard" ng-repeat= "field in fields | orderBy: 'name'"></div>
+    </div>
+  </div>
+</div>
+<!--<div class="row">
+  <a ui-sref="app.ladderstory" class = "btn btn-primary">Press Me for /ladderstories</a>
+</div>-->
+</div>

@@ -1,0 +1,33 @@
+
+<div class="col-xs-12 no-padding">
+                <!--Image Card-->
+                <a ui-sref="app.post({id: post._id})" class= "fillCard">
+                <div class="card hoverable postCard">
+                    <div class="card-content">
+                      <div class="col-xs-12 padding_bottom postTitle">
+                        <h2 class="col-xs-6 no-padding">{{post.title}}</h2>
+                        <h2 class="col-xs-6 no-padding text-right">
+                          <button type="button" class="btn btn-primary btn-circle">{{post.field[0]}}</button>
+                          {{post.field}}
+                        </h2>
+                      </div>
+
+                        <h3 class="padding_bottom"><div ta-bind ng-model = "post.content"></div></h3>
+
+                      <div class="author-date col-xs-12 no-padding">
+                        <p class="col-xs-6 text-left no-padding">
+                          <img class = "img-circle" src = "http://luxtonaesthetics.com/images/icon-user-default.png" alt="" />
+                          {{post.user.username}}
+                        </p>
+                        <p class="col-xs-6 text-right no-padding">{{post.createdAt | date}}</p>
+                      </div>
+                    </div>
+                    <!--Buttons-->
+                    <!--<div class="card-btn text-center">
+                        <a href="#" class="btn btn-primary btn-md waves-effect waves-light">Read more</a>
+                    </div>-->
+                    <!--/.Buttons-->
+                </div>
+              </a>
+                <!--Image Card-->
+            </div>

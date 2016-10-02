@@ -1,0 +1,231 @@
+<div class="container-fluid">
+
+<nav class="navbar navbar-inverse">
+
+    <div class="container-fluid">
+
+        <div class="navbar-header">
+
+            <button aria-expanded="false" class="navbar-toggle collapsed" data-target="#nav-collapse" data-toggle="collapse" type="button">
+
+                <span class="sr-only">
+                    Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+
+            </button>
+
+            <a class="navbar-brand" ui-sref="app.home.container">Brand</a>
+
+        </div>
+
+        <div class="collapse navbar-collapse" id="nav-collapse">
+
+            <ul class="nav navbar-nav">
+                <li>
+                    <a ui-sref="app.home.container">Home</a>
+                </li>
+                <li>
+                    <a ui-sref="app.browse.fields">Browse</a>
+                </li>
+                <li>
+                    <a ui-sref="app.ask.editor">Ask</a>
+                </li>
+                <li>
+                    <a ui-sref="app.share.editor">Share</a>
+                </li>
+                <!--<li>
+                    <a ui-sref="app.aboutus">About Us</a>
+                </li>-->
+            </ul>
+            <ul class="nav pull-right navbar-nav">
+              <li>
+                  <a ui-sref = 'app.userPage.container'>{{username}}</a>
+              </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="glyphicon glyphicon-user"></i>
+                        <i class="glyphicon glyphicon-chevron-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-right">
+                        <li>
+                            <a data-toggle = "modal" data-target= "#loginModal">
+                                <i class="fa fa-sign-in"></i>
+                                Login</a>
+                        </li>
+                        <li>
+                            <a ui-sref = 'app.userPage.container'>
+                                <i class="fa fa-user"></i>
+                                Profile</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a ng-click="logOut()">
+                                <i class="fa fa-sign-out"></i>
+                                Logout</a>
+                        </li>
+                        <li>
+                          <a data-toggle = "modal" data-target = "#registerModal">
+                            <i class="fa fa-user-plus"></i>
+                            Register
+                          </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a ng-click="toggleSearch()">
+                        <i class="glyphicon glyphicon-search"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-right search">
+                        <form class="form-inline">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Search" aria-describedby="searchinput" size="15">
+                                <span type="submit" class="btn btn-default input-group-addon" id="searchinput">
+                                    <i class="glyphicon glyphicon-search"></i>
+                                </span>
+                            </div>
+                        </form>
+                    </ul>
+                </li>
+            </ul>
+
+            <!--<form class="navbar-form navbar-right" role="search">
+
+        <div class="form-group">
+          <input class="form-control" placeholder="Search..." type="text">
+        </div>
+        <button class="btn btn-default" type="submit">Search</button>
+
+      </form>-->
+
+        </div>
+    </div>
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div id="login-overlay" class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">×</span>
+                        <span class="sr-only">Close</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">Login to site.com</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="well">
+                                <form id="loginForm" ng-controller= "LoginController" ng-submit="doLogin()">
+                                    <div class="form-group">
+                                        <label for="username" class="control-label">Username</label>
+                                        <input ng-model= "loginData.username" type="text" class="form-control" id="username" name="username" value="" required="" title="Please enter you username" placeholder="example@gmail.com">
+                                        <span class="help-block"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="password" class="control-label" >Password</label>
+                                        <input ng-model = "loginData.password" type="password" class="form-control" id="password" name="password" value="" required="" title="Please enter your password">
+                                        <span class="help-block"></span>
+                                    </div>
+                                    <div id="loginErrorMsg" class="alert alert-error hide">Wrong username og password</div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" name="remember" id="remember" ng-model="rememberMe">
+                                            Remember login
+                                        </label>
+                                        <p class="help-block">(if this is a private computer)</p>
+                                    </div>
+                                    <button type="submit" class="btn btn-success btn-block">Login</button>
+                                    <a href="/forgot/" class="btn btn-default btn-block">Help to login</a>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div id="login-overlay" class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">×</span>
+                        <span class="sr-only">Close</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">Login to site.com</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="well">
+                                <form id="registerForm" ng-controller= "RegisterController" ng-submit="doRegister()">
+                                    <div class="form-group">
+                                        <label for="username" class="control-label">Username</label>
+                                        <input ng-model= "registration.username" type="text" class="form-control" id="username" name="username" value="" required="" title="Please enter you username" placeholder="Username">
+                                        <span class="help-block"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="password" class="control-label" >Password</label>
+                                        <input ng-model = "registration.password" type="password" class="form-control" id="password" name="password" value="" required="" title="Please enter your password">
+                                        <span class="help-block"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="firstname" class="control-label">First Name</label>
+                                        <input ng-model= "registration.firstname" type="text" class="form-control" id="firstname" name="firstname" value="" required="" title="Please enter you first name" placeholder="First name">
+                                        <span class="help-block"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="lastname" class="control-label">Last Name</label>
+                                        <input ng-model= "registration.lastname" type="text" class="form-control" id="lastname" name="lastname" value="" required="" title="Please enter you last name" placeholder="Last name">
+                                        <span class="help-block"></span>
+                                    </div>
+                                    <div id="loginErrorMsg" class="alert alert-error hide">Wrong username or password</div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" name="remember" id="remember" ng-model="registration.rememberMe">
+                                            Remember login
+                                        </label>
+                                        <p class="help-block">(if this is a private computer)</p>
+                                    </div>
+                                    <button type="submit" class="btn btn-success btn-block">Login</button>
+                                    <a href="/forgot/" class="btn btn-default btn-block">Help to login</a>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid" ng-class="{'hidden': !searchToggle, 'container-fluid': searchToggle}">
+      <div class="row">
+        <div class="col-xs-12 search">
+          <form class="form-inline" ng-controller= "SearchController">
+            <div class="input-group search">
+              <input ng-model= "newSearch" type="text" class="form-control" placeholder="Search" aria-describedby="searchinput">
+              <span type="submit" class="btn btn-default input-group-addon" id="searchinput" ng-click="submitSearch()">
+                <i class="glyphicon glyphicon-search"></i>
+              </span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+</nav>
+
+<header ng-class="{'hidden': !$root.fromHome, 'jumbotron': $root.fromHome}" class="jumbotron">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6">
+        <div ui-view="intro"></div>
+      </div>
+
+      <div class="col-xs-12 col-sm-6">
+        <div ui-view="registerSection"></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+</div>

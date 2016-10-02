@@ -1,0 +1,15 @@
+<div class="container-fluid">
+    <div class="row">
+        <!--<div class="hidden">
+          <div class="col-md-6">
+              <div ui-view="posts" ng-repeat="post in field.posts | orderBy:'-createdAt' "></div>
+          </div>
+          <div class="col-md-6">
+              <div ui-view="tutorials" ng-repeat="tutorial in field.tutorials | orderBy:'-createdAt'"></div>
+          </div>
+        </div>-->
+        <div class="col-xs-12">
+            <div ui-view="posts" ng-repeat="post in posts"></div>
+        </div>
+    </div>
+</div>

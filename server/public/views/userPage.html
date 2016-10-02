@@ -1,0 +1,30 @@
+<!--In this page the logged in user can manage his profile-->
+<div class="container-fluid row-no-padding">
+    <div class="row">
+        <div class="col-xs-12">
+            <h1>User Information</h1>
+            <h3>{{user.username}}</h3>
+            <p>
+                {{user.firstname}}
+                {{user.lastname}}
+            </p>
+        </div>
+    </div>
+    <div class="row">
+
+        <div class="col-xs-12">
+            <h1>Posts/Tutorial</h1>
+            <div ui-view="postsUser" ng-repeat="post in user.posts | orderBy: 'date'"></div>
+        </div>
+        <div class="col-xs-12">
+            <h1>Replies</h1>
+            <div ui-view="repliesUser" ng-repeat="reply in user.replies | orderBy: 'date'"></div>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <h1>User's Rating</h1>
+        </div>
+    </div>
+</div>

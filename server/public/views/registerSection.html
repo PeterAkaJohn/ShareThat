@@ -1,0 +1,22 @@
+<div class="row" id= "register">
+  <div class="col-xs-12">
+        <h2>
+      Register
+    </h2>
+    <form id="registerForm" ng-controller= "RegisterController" ng-submit="doRegister()">
+        <div class="form-group">
+            <label for="username" class="control-label">Username</label>
+            <input ng-model= "registration.username" type="text" class="form-control" id="username" name="username" value="" required="" title="Please enter you username" placeholder="Username">
+            <span class="help-block"></span>
+        </div>
+        <div class="form-group">
+            <label for="password" class="control-label" >Password</label>
+            <input ng-model = "registration.password" type="password" class="form-control" id="password" name="password" value="" required="" title="Please enter your password">
+            <span class="help-block"></span>
+        </div>
+        <div class="form-group btn-register">
+          <button type="submit" class="btn btn-success btn-block">Register</button>
+        </div>
+    </form>
+  </div>
+</div>

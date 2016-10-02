@@ -1,0 +1,7 @@
+<div class="row" id = "fields">
+  <div class="col-xs-12">
+    <div class="row">
+      <div ui-view = "fieldCard" ng-repeat= "field in fields | orderBy: '-updatedAt'"></div>
+    </div>
+  </div>
+</div>

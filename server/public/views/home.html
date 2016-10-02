@@ -1,0 +1,42 @@
+<!--In this page will be shown the stories with the most reviews and appreciations
+ in a vertical rectangle style without borders, the most appreciated authors in a ladder element-->
+<!--<div class="container-fluid" ng-controller="IndexController">
+    <button  ng-hide= "!sideToggle" ng-click= "toggleSide()" type="button" id="lastButton" class= "btn btn-primary hidden-xs" name="button"><span class = "glyphicon glyphicon-chevron-left"></span></button>
+    <button ng-click="toggleSide()" type="button" id="lastButton" class="btn btn-primary hidden-xs" name="button">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+    </button>
+    <div class="row row-home" ng-controller="HomeTopController">
+        <div ng-class = "{'col-xs-12 col-sm-12': sideToggle, 'col-xs-12 col-sm-9': !sideToggle}" id= "sections">
+        <div class="col-xs-12" id="sections">
+            <div ui-view="intro"></div>
+            <div ng-class="{'': sideToggle, 'hidden': !sideToggle}">
+                <div ui-view="fields"></div>
+            </div>
+            <div ng-class="{'hidden': sideToggle, '': !sideToggle}">
+                <div ui-view="latestPosts"></div>
+            </div>
+        </div>
+        <div ng-class = "{'hidden-xs col-sm-3': !sideToggle, 'hidden': sideToggle}" id = "lastPosts">
+         <div ui-view="latestPosts"></div>
+       </div>
+    </div>
+</div>-->
+<div class="container-fluid container-home" ng-controller="IndexController">
+    <!--<button  ng-hide= "!sideToggle" ng-click= "toggleSide()" type="button" id="lastButton" class= "btn btn-primary hidden-xs" name="button"><span class = "glyphicon glyphicon-chevron-left"></span></button>-->
+    <div class="row row-home row-eq-height" ng-controller="HomeTopController">
+      <button ng-click="toggleSide()" type="button" id="lastButton" class="btn btn-primary hidden-xs" name="button">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+      </button>
+        <!--<div ng-class = "{'col-xs-12 col-sm-12': sideToggle, 'col-xs-12 col-sm-9': !sideToggle}" id= "sections">-->
+        <div id="sections" class = "col-xs-12" ng-class="{'col-xs-12': sideToggle, 'hidden': !sideToggle}">
+            <div ui-view="fields"></div>
+        </div>
+
+        <div id="lastPosts" class = "col-xs-12" ng-class = "{'col-xs-12': !sideToggle, 'hidden': sideToggle}">
+          <div ui-view="latestPosts"></div>
+        </div>
+        <!--<div ng-class = "{'hidden-xs col-sm-3': !sideToggle, 'hidden': sideToggle}" id = "lastPosts">
+         <div ui-view="latestPosts"></div>
+       </div>-->
+    </div>
+</div>

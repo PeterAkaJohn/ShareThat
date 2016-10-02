@@ -1,0 +1,28 @@
+<div class="col-md-3 no-padding">
+                <!--Image Card-->
+                <a ui-sref="app.tutorial({id: tutorial._id})" class= "fillCard">
+                <div class="card card2 hoverable">
+                    <div class="card-image">
+                        <div class="view overlay hm-white-slight z-depth-1">
+                            <img src="http://mdbootstrap.com/images/reg/reg%20(2).jpg" class="img-responsive" alt="">
+                                <div class="mask waves-effect"></div>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h5>{{tutorial.title}}</h5>
+                        <p>
+                          {{tutorial.user.username}}
+                        </p>
+                        <p>{{tutorial.createdAt | date}}</p>
+                        <cite>{{post.field}}</cite>
+                        <img class = "thumbnail" src = ""alt="" />
+                    </div>
+                    <!--Buttons-->
+                    <!--<div class="card-btn text-center">
+                        <a href="#" class="btn btn-primary btn-md waves-effect waves-light">Read more</a>
+                    </div>-->
+                    <!--/.Buttons-->
+                </div>
+              </a>
+                <!--Image Card-->
+            </div>

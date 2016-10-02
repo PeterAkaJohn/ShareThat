@@ -1,0 +1,12 @@
+
+
+  <div class="row row-editor">
+    <div id= "editor" class="col-xs-12" ng-class="{'hidden': editorToggle, 'col-xs-12': !editorToggle}">
+      <div text-angular ta-toolbar="[['h2','bold','italics'],['pre', 'code','insertImage','insertLink','insertVideo'], ['justifyLeft','justifyCenter','justifyRight','justifyFull','indent','outdent','html']]" ng-model="$parent.textAngular"></div>
+    </div>
+    <div class="col-xs-12 no-padding">
+      <button ng-class="{'btn btn-danger': !editorToggle, 'btn btn-primary': editorToggle}" ng-click="toggleEditor()" type="button" id="editorButton" class="btn btn-primary" name="button">
+        <span ng-class="{'glyphicon glyphicon-chevron-down': !editorToggle, 'glyphicon glyphicon-chevron-up': editorToggle}" class="glyphicon glyphicon-chevron-up"></span>
+      </button>
+    </div>
+  </div>

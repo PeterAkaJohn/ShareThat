@@ -1,0 +1,27 @@
+<div class="container-fluid row-no-padding">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="alert alert-info alert-dismissible" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          Click the button on the right to switch between questions and tutorials
+        </div>
+      </div>
+      <button ng-click="switchTabs()" type="button" id="lastButton" class="btn btn-primary " name="button">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+      </button>
+        <!--<div class="hidden">
+          <div class="col-md-6">
+              <div ui-view="posts" ng-repeat="post in field.posts | orderBy:'-createdAt' "></div>
+          </div>
+          <div class="col-md-6">
+              <div ui-view="tutorials" ng-repeat="tutorial in field.tutorials | orderBy:'-createdAt'"></div>
+          </div>
+        </div>-->
+        <div class="col-xs-12" ng-class="{'col-xs-12': switched, 'hidden': !switched}">
+            <div ui-view="posts" ng-repeat="post in field.posts| orderBy:'-createdAt'"></div>
+        </div>
+        <div class="col-xs-12" ng-class="{'col-xs-12': !switched, 'hidden': switched}">
+            <div ui-view="tutorials" ng-repeat="tutorial in field.tutorials| orderBy:'-createdAt'"></div>
+        </div>
+    </div>
+</div>
