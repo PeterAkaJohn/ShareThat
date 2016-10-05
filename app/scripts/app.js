@@ -159,7 +159,7 @@ angular.module('shareApp', ['ui.router', 'ngResource', 'textAngular', 'ngDialog'
     })
 
     .state('app.search', {
-        url: 'search',
+        url: 'search/',
         views: {
             'content@': {
                 templateUrl: 'views/searchMenu.html',

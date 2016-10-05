@@ -46,6 +46,8 @@ angular.module('shareApp')
           isArray: true
         }
       });
+
+
     };
   }])
 

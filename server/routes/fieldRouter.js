@@ -45,7 +45,7 @@ var router = function(){
   fieldRouter.route('/limitedFields')
 
   .get(function(req,res,next){//everyone
-    Fields.find({}).limit(12).exec(function(err, field){
+    Fields.find({}).sort({createdAt: -1}).limit(12).exec(function(err, field){
       if (err) {
         throw err;
       }

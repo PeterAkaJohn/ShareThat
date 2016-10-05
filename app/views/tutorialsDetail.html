@@ -17,7 +17,7 @@
 
       <div class="row comment">
         <div class="col-xs-12 comment">
-          <blockquote ng-repeat="reply in post.replies | orderBy: 'date'">
+          <blockquote class = "hoverable reply" ng-repeat="reply in post.replies | orderBy: 'date'">
             <div ta-bind ng-model = "reply.content">
             </div>
             <p>{{reply.user.username}}</p>

@@ -17,9 +17,18 @@ blockquote {
     background: transparent;
 }
 
+#editor2 {
+  width: 100%;
+}
+
 .comment {
     background: transparent;
     background-color: transparent;
+}
+
+.reply {
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  background-color: #3B4447;
 }
 
 #editorButton {
@@ -90,17 +99,17 @@ select option {
 }
 
 .navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>li>a:focus {
-    color: green;
+    color: #8B0CE8;
     /*Sets the text hover color on navbar*/
 }
 
 .navbar-inverse .navbar-nav>li>a:active {
-    color: green
+    color: #8B0CE8;
 }
 
 .navbar-inverse .navbar-nav>.active>a {
-    background: red;
-    color: green;
+    background: #14D52C;
+    color: #8B0CE8;
 }
 
 .nav.navbar-nav>.active>li>a {
@@ -109,7 +118,7 @@ select option {
 }
 
 .nav.navbar-nav li a {
-    color: red;
+    color: #14D52C;
     font-size: 20px;
     font-family: 'Roboto Mono';
 }
@@ -129,7 +138,6 @@ select option {
     transform: translateZ(0);
     background: 0 0;
     display: block;
-    min-height: 12em;
     transition: all 225ms;
     padding: 0 !important;
     margin: 0 !important;
@@ -144,11 +152,11 @@ select option {
     transform: translateZ(0);
     background: 0 0;
     display: block;
-    min-height: 25em;
-    max-height: 30em;
     transition: all 225ms;
     padding: 0 !important;
     margin: 0 !important;
+    padding-bottom: 2em !important;
+    background-color: #3B4447;
 }
 
 .card span.card-title {
@@ -167,6 +175,7 @@ select option {
     border-radius: 2px 2px 0 0;
     background-clip: padding-box;
     position: relative;
+    width: 100%;
     z-index: -1;
 }
 
@@ -182,6 +191,7 @@ select option {
     border-radius: 0 0 2px 2px;
     background-clip: padding-box;
     box-sizing: border-box;
+    min-height: 1em;
 }
 
 .card .card-content p {
@@ -299,6 +309,10 @@ select option {
     font-size: 100%;
     margin: 20px 0;
     color: #C2C2C2;
+}
+
+.ta-root {
+  width: 100%;
 }
 
 .navbar-inverse .navbar-toggle .icon-bar {
@@ -447,7 +461,9 @@ input[type="password"] {
     text-align: center;
 }
 
-.author-date {}
+.author-date {
+  padding-bottom: 0.3em !important;
+}
 
 .img-circle {
     height: 2em;
@@ -490,6 +506,16 @@ input[type="password"] {
     margin: 0px !important;
 }
 
+.padding_top {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    padding-top: 6em !important;
+    padding-bottom: 0px !important;
+    position: relative;
+    height: auto;
+    margin: 0px !important;
+}
+
 .circle-card {
     border-radius: 50% !important;
 }
@@ -505,4 +531,16 @@ input[type="password"] {
 .oneline {
   height: 3em;
   overflow: hidden;
+}
+
+#loginForm, #registerForm {
+  color: black;
+}
+
+#usernameModal, #passwordModal, #firstnameModal, #lastnameModal {
+  color: black;
+}
+
+.ta-text {
+  width: 100% !important;
 }

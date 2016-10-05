@@ -118,12 +118,12 @@
                                 <form id="loginForm" ng-controller= "LoginController" ng-submit="doLogin()">
                                     <div class="form-group">
                                         <label for="username" class="control-label">Username</label>
-                                        <input ng-model= "loginData.username" type="text" class="form-control" id="username" name="username" value="" required="" title="Please enter you username" placeholder="example@gmail.com">
+                                        <input ng-model= "loginData.username" type="text" class="form-control" id="usernameModal" name="username" value="" required="" title="Please enter you username" placeholder="example@gmail.com">
                                         <span class="help-block"></span>
                                     </div>
                                     <div class="form-group">
                                         <label for="password" class="control-label" >Password</label>
-                                        <input ng-model = "loginData.password" type="password" class="form-control" id="password" name="password" value="" required="" title="Please enter your password">
+                                        <input ng-model = "loginData.password" type="password" class="form-control" id="passwordModal" name="password" value="" required="" title="Please enter your password">
                                         <span class="help-block"></span>
                                     </div>
                                     <div id="loginErrorMsg" class="alert alert-error hide">Wrong username og password</div>
@@ -162,22 +162,22 @@
                                 <form id="registerForm" ng-controller= "RegisterController" ng-submit="doRegister()">
                                     <div class="form-group">
                                         <label for="username" class="control-label">Username</label>
-                                        <input ng-model= "registration.username" type="text" class="form-control" id="username" name="username" value="" required="" title="Please enter you username" placeholder="Username">
+                                        <input ng-model= "registration.username" type="text" class="form-control" id="usernameModal" name="username" value="" required="" title="Please enter you username" placeholder="Username">
                                         <span class="help-block"></span>
                                     </div>
                                     <div class="form-group">
                                         <label for="password" class="control-label" >Password</label>
-                                        <input ng-model = "registration.password" type="password" class="form-control" id="password" name="password" value="" required="" title="Please enter your password">
+                                        <input ng-model = "registration.password" type="password" class="form-control" id="passwordModal" name="password" value="" required="" title="Please enter your password">
                                         <span class="help-block"></span>
                                     </div>
                                     <div class="form-group">
                                         <label for="firstname" class="control-label">First Name</label>
-                                        <input ng-model= "registration.firstname" type="text" class="form-control" id="firstname" name="firstname" value="" required="" title="Please enter you first name" placeholder="First name">
+                                        <input ng-model= "registration.firstname" type="text" class="form-control" id="firstnameModal" name="firstname" value="" required="" title="Please enter you first name" placeholder="First name">
                                         <span class="help-block"></span>
                                     </div>
                                     <div class="form-group">
                                         <label for="lastname" class="control-label">Last Name</label>
-                                        <input ng-model= "registration.lastname" type="text" class="form-control" id="lastname" name="lastname" value="" required="" title="Please enter you last name" placeholder="Last name">
+                                        <input ng-model= "registration.lastname" type="text" class="form-control" id="lastnameModal" name="lastname" value="" required="" title="Please enter you last name" placeholder="Last name">
                                         <span class="help-block"></span>
                                     </div>
                                     <div id="loginErrorMsg" class="alert alert-error hide">Wrong username or password</div>

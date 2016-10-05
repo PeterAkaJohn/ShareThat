@@ -17,7 +17,7 @@
 
 <div class="row comment">
   <div class="col-xs-12 comment">
-    <blockquote ng-repeat="reply in post.replies | orderBy: 'date'">
+    <blockquote class="hoverable reply" ng-repeat="reply in post.replies | orderBy: 'date'">
       <div ta-bind ng-model= "reply.content">
       </div>
       <p>{{reply.user.username}}</p>
@@ -27,14 +27,14 @@
       <cite>{{reply.date | date:'medium'}}</cite>
     </blockquote>
   </div>
-  <form role="form" class= "comment" ng-controller="CommentController" ng-submit="submitComment()">
-    <div ui-view = 'editor' class="comment"></div>
-    <button type="submit" class="btn btn-default">Submit</button>
-  </form>
 
 </div>
 
 
+<form role="form" class= "comment" ng-controller="CommentController" ng-submit="submitComment()">
+  <div ui-view = 'editor' class="comment"></div>
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>
 
 
 
