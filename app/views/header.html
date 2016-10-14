@@ -114,7 +114,7 @@
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-xs-12">
-                            <div class="well">
+
                                 <form id="loginForm" ng-controller= "LoginController" ng-submit="doLogin()">
                                     <div class="form-group">
                                         <label for="username" class="control-label">Username</label>
@@ -123,7 +123,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="password" class="control-label" >Password</label>
-                                        <input ng-model = "loginData.password" type="password" class="form-control" id="passwordModal" name="password" value="" required="" title="Please enter your password">
+                                        <input ng-model = "loginData.password" placeholder = "Password" type="password" class="form-control" id="passwordModal" name="password" value="" required="" title="Please enter your password">
                                         <span class="help-block"></span>
                                     </div>
                                     <div id="loginErrorMsg" class="alert alert-error hide">Wrong username og password</div>
@@ -134,10 +134,12 @@
                                         </label>
                                         <p class="help-block">(if this is a private computer)</p>
                                     </div>
-                                    <button type="submit" class="btn btn-success btn-block">Login</button>
-                                    <a href="/forgot/" class="btn btn-default btn-block">Help to login</a>
+                                    <div class="form-group fix">
+                                      <button type="submit" class="btn btn-success btn-block">Login</button>
+                                      <a href="/forgot/" class="btn btn-default btn-block">Help to login</a>
+                                    </div>
                                 </form>
-                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -158,7 +160,7 @@
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-xs-12">
-                            <div class="well">
+
                                 <form id="registerForm" ng-controller= "RegisterController" ng-submit="doRegister()">
                                     <div class="form-group">
                                         <label for="username" class="control-label">Username</label>
@@ -167,7 +169,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="password" class="control-label" >Password</label>
-                                        <input ng-model = "registration.password" type="password" class="form-control" id="passwordModal" name="password" value="" required="" title="Please enter your password">
+                                        <input ng-model = "registration.password" placeholder = "Password" type="password" class="form-control" id="passwordModal" name="password" value="" required="" title="Please enter your password">
                                         <span class="help-block"></span>
                                     </div>
                                     <div class="form-group">
@@ -188,10 +190,12 @@
                                         </label>
                                         <p class="help-block">(if this is a private computer)</p>
                                     </div>
-                                    <button type="submit" class="btn btn-success btn-block">Login</button>
+                                    <div class="form-group fix">
+                                    <button type="submit" class="btn btn-success btn-block">Register</button>
                                     <a href="/forgot/" class="btn btn-default btn-block">Help to login</a>
+                                  </div>
                                 </form>
-                            </div>
+
                         </div>
                     </div>
                 </div>

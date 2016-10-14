@@ -112,6 +112,10 @@ select option {
     color: #8B0CE8;
 }
 
+.navbar-inverse .navbar-nav>.active {
+  color: #8B0CE8;
+}
+
 .nav.navbar-nav>.active>li>a {
     background-color: green;
     color: black;
@@ -417,9 +421,6 @@ select option {
     padding-top: 15em;
 }
 
-.btn-register {
-  margin-right: 1em;
-}
 
 label {
   font-size: 1em;
@@ -534,7 +535,7 @@ input[type="password"] {
 }
 
 #loginForm, #registerForm {
-  color: black;
+  color: #C2C2C2;
 }
 
 #usernameModal, #passwordModal, #firstnameModal, #lastnameModal {
@@ -543,4 +544,24 @@ input[type="password"] {
 
 .ta-text {
   width: 100% !important;
+}
+
+.modal-content {
+  background-color: #3B4447;
+}
+
+.modal-title {
+  color: #14D52C;
+}
+
+.modal-body {
+  background-color: #3B4447;
+}
+
+.fix {
+  margin-right: 1em;
+}
+
+.modal-header {
+  border-color: #14D52C;
 }
