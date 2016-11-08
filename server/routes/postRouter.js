@@ -86,6 +86,7 @@ var router = function(){
                 throw err;
               }
               console.log('Added post id to user');
+              res.json(id);
             });
           });
         });

@@ -46,9 +46,15 @@ angular.module('shareApp')
           isArray: true
         }
       });
-
-
     };
+    this.retrieveSearch = function(){
+      return $resource(baseURL + "search/:search", null, {
+        'retrieve': {
+          method: 'GET',
+          isArray: true
+        }
+      });
+    }
   }])
 
 .factory('postsFactory', ['$resource','baseURL',function($resource, baseURL) {

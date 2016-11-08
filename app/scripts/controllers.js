@@ -152,6 +152,7 @@ angular.module('shareApp')
     console.log($scope.search);
     searchService.addSearch($scope.search);
 
+
     $state.go('app.search.results', {}, {reload:true});
 
 
@@ -173,7 +174,7 @@ $rootScope.fromHome = false;
   );*/
 
   $scope.posts = searchService.retriveResultOfSearch().save($scope.newSearch);
-
+  //$scope.posts = searchService.retrieveSearch().retrieve($scope.newSearch);
 }])
 
 .controller('AboutController', ['$state', '$rootScope', '$scope', 'feedbackFactory', function($state, $rootScope, $scope, feedbackFactory) {

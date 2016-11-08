@@ -78,9 +78,9 @@
                         <i class="glyphicon glyphicon-search"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-right search">
-                        <form class="form-inline">
+                        <form class="form-inline" ng-submit="submitSearch()">
                             <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Search" aria-describedby="searchinput" size="15">
+                                <input name="q" ng-model="newSearch" type="text" class="form-control" placeholder="Search" aria-describedby="searchinput" size="15">
                                 <span type="submit" class="btn btn-default input-group-addon" id="searchinput">
                                     <i class="glyphicon glyphicon-search"></i>
                                 </span>

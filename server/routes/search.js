@@ -18,6 +18,27 @@ var router = function(){
 
   searchRouter.route('/')
 
+  .get(function(req, res, next){
+
+    var newSearch;
+
+    if(req.body.content == '') {
+      newSearch = currentSearch;
+    }else{
+      currentSearch = req.body.content;
+      newSearch = req.body.content;
+    }
+
+    console.log(newSearch);
+
+    Posts.find({}).or([{'title':{$regex: newSearch}}]).or([{'content':{$regex: newSearch}}]).populate('user replies.user').or([{'user.username': {$regex: newSearch}}]).sort({title: -1}).limit(50).exec(function(err, post){
+      if (err) {
+        throw err;
+      }
+      res.json(post);
+      });
+    })
+
   .post(function(req, res, next){
 
     var newSearch;
