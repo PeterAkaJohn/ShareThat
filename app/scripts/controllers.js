@@ -315,7 +315,7 @@ $rootScope.fromHome = false;
     }
 }])
 
-.controller('QuestionController', ['$scope', '$rootScope','$state', 'postsFactory', 'fieldService', function($scope, $rootScope, $state, postsFactory, fieldService) {
+.controller('QuestionController', ['$scope', '$location', '$rootScope','$state', 'postsFactory', 'fieldService', function($scope, $location, $rootScope, $state, postsFactory, fieldService) {
     $scope.textAngular = "<h2>New Stuff...</h2>";
     $scope.showFields = false;
     $rootScope.fromHome = false;
@@ -339,13 +339,17 @@ $rootScope.fromHome = false;
             field: $scope.selectedField.name,
             typeOfPost: 'Q'
         };
-        postsFactory.getPostsAndTutorial().save($scope.question);
+        postsFactory.getPostsAndTutorial().save($scope.question, function(data){
+          console.log(data);
+          $location.path('/browse/posts/'+data.content.toString());
+          $location.replace();
+        });
         console.log($scope.question);
     }
 
 }])
 
-.controller('NewTutorialController', ['$scope', '$rootScope','$state', 'postsFactory', 'fieldService', function($scope, $rootScope, $state, postsFactory, fieldService) {
+.controller('NewTutorialController', ['$scope', '$location', '$rootScope','$state', 'postsFactory', 'fieldService', function($scope, $location, $rootScope, $state, postsFactory, fieldService) {
     $scope.textAngular = "<h2>New Stuff...</h2>";
     $scope.title;
     $rootScope.fromHome = false;
@@ -370,7 +374,10 @@ $rootScope.fromHome = false;
             field: $scope.selectedField.name,
             typeOfPost: 'T'
         };
-        postsFactory.getPostsAndTutorial().save($scope.tutorial);
+        postsFactory.getPostsAndTutorial().save($scope.tutorial, function(data){
+          $location.path('/browse/tutorials/'+data.content.toString());
+          $location.replace();
+        });
         console.log($scope.tutorial);
     }
 

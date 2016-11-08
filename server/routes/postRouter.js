@@ -86,18 +86,14 @@ var router = function(){
                 throw err;
               }
               console.log('Added post id to user');
-              res.json(id);
+              var new_id = {
+                content: id
+              }
+              res.json(new_id);
             });
           });
         });
       });
-
-
-      res.writeHead(200, {
-        'Content-Type': 'text/plain'
-      });
-
-      res.end('Added the post with id: ' + id);
     })
   })
 
