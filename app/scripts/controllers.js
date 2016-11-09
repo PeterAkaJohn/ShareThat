@@ -341,8 +341,9 @@ $rootScope.fromHome = false;
         };
         postsFactory.getPostsAndTutorial().save($scope.question, function(data){
           console.log(data);
-          $location.path('/browse/posts/'+data.content.toString());
-          $location.replace();
+          $state.go("app.post",{id: data.content})
+          //$location.path('/browse/posts/'+data.content.toString());
+          //$location.replace();
         });
         console.log($scope.question);
     }
@@ -375,8 +376,9 @@ $rootScope.fromHome = false;
             typeOfPost: 'T'
         };
         postsFactory.getPostsAndTutorial().save($scope.tutorial, function(data){
-          $location.path('/browse/tutorials/'+data.content.toString());
-          $location.replace();
+          $state.go("app.post",{id: data.content})
+          //$location.path('/browse/tutorials/'+data.content.toString());
+          //$location.replace();
         });
         console.log($scope.tutorial);
     }
