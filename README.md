@@ -1,6 +1,6 @@
-### Web application aimed at sharing knowledge between its users in field they are well versed in.
+# Web application aimed at sharing knowledge between its users in field they are well versed in.
 
-# Project hosted and visible at (http://shared-coursesprojects.rhcloud.com/#/)
+## Project hosted and visible at (http://shared-coursesprojects.rhcloud.com/#/)
 
 **Done:**
 
